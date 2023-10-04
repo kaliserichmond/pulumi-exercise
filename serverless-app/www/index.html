@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GCP Python Serverless App Example</title>
+    <script>
+        var config = {};
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            const response = await fetch("config.json");
+            config = await response.json();
+        });
+
+        async function getTable() {
+            const response = await fetch(`${config.api}/data`);
+            const data = await response.json();
+            document.querySelector("#refresh").textContent = data;
+        }
+    </script>
+</head>
+<body>
+    <h1>⌚ Pulumi Exercise: Option 1</h1>
+    <p> 
+        <span>
+            A serverless application that processes uploads to a storage bucket and builds an index of the files in a database table 
+        </span>
+    </p>
+    <p>
+        <button onclick="refesh()">Refresh</button>
+        <span id="refresh"></span>
+    </p>
+</body>
+</html>

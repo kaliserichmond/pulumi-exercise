@@ -1,0 +1,7 @@
+config:
+  gcp:project: pulumi-exercise
+  gcp:region: us-central1
+  serverless-app:appPath: ./app
+  serverless-app:errorDocument: error.html
+  serverless-app:indexDocument: index.html
+  serverless-app:sitePath: ./www
